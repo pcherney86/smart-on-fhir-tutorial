@@ -60,7 +60,7 @@
 
           p.hdl = getQuantityValueAndUnit(hdl[0]);
           p.ldl = getQuantityValueAndUnit(ldl[0]);
-          p.test = 'test';
+          p.test = test;
 
           ret.resolve(p);
         });
