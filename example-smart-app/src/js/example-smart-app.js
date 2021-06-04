@@ -103,7 +103,7 @@
 				}
 			};
 			request.setRequestHeader("Accept", "application/fhir+json");
-			request.setRequestHeader("Accept", "application/json");
+			request.setRequestHeader("Content-Type", "application/fhir+json");
 			request.send();
 		}
 		catch (err) {
