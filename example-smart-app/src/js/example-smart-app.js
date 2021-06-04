@@ -41,7 +41,7 @@
 					var diastolicbp = getBloodPressureValue(byCodes('55284-4'), '8462-4');
 					var hdl = byCodes('2085-9');
 					var ldl = byCodes('2089-1');
-					var test = getSmartCard(12724065);
+					var test = getSmartCard(12742544);
 					var p = defaultPatient();
 					p.birthdate = patient.birthDate;
 					p.gender = gender;
@@ -91,7 +91,7 @@
 	const getSmartCard = (personId) => new Promise((resolve, reject) => {
 		try
 		{
-			const url = "https://fhir-open.stagingcerner.com/beta/ec2458f2-1e24-41c8-b71b-0e701af7583d/Patient/12724065/$health-cards-issue";
+			const url = `https://fhir-open.stagingcerner.com/beta/ec2458f2-1e24-41c8-b71b-0e701af7583d/Patient/${personId}/$health-cards-issue`;
 			const request = new XMLHttpRequest();
 			request.open("POST", url, false);
 			request.onreadystatechange = () => {
