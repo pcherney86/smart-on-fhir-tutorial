@@ -104,7 +104,20 @@
 			};
 			request.setRequestHeader("Accept", "application/fhir+json");
 			request.setRequestHeader("Content-Type", "application/fhir+json");
-			request.send();
+			const body = `{
+				"resourceType": "Parameters",
+  				"parameter": [
+					{
+						"name": "credentialType",
+						"valueUri": "https://smarthealth.cards#immunization"
+					},
+					{
+						"name": "credentialType",
+						"valueUri": "https://smarthealth.cards#covid19"
+					}
+				]
+			}`;
+			request.send(body);
 		}
 		catch (err) {
 			reject(`Failed due to ${err.description}`);
