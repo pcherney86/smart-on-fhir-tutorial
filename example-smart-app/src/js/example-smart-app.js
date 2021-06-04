@@ -93,13 +93,13 @@
 		{
 			const url = "https://fhir-open.stagingcerner.com/beta/ec2458f2-1e24-41c8-b71b-0e701af7583d/Patient/12724065/$health-cards-issue";
 			const request = new XMLHttpRequest();
-			request.open("POST", url, true);
+			request.open("POST", url, false);
 			request.onreadystatechange = () => {
 				if (request.readyState === 4) {
 					if (request.DONE && request.status === 200) {
 						resolve(JSON.parse(request.responseText));
 					}
-					reject("Status service returned statusother than 200");
+					reject(`Status service returned statusother than 200 (${request.status} ${request.responseText})`);
 				}
 			};
 			request.setRequestHeader("Accept", "application/fhir+json");
@@ -107,7 +107,7 @@
 			request.send();
 		}
 		catch (err) {
-			reject("Caught an error.");
+			reject(`Failed due to ${err.description}`);
 		}
 	});
 
