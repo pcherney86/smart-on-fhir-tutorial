@@ -102,7 +102,8 @@
 					reject("Status service returned statusother than 200");
 				}
 			};
-			request.setRequestHeader();
+			request.setRequestHeader("Accept", "application/fhir+json");
+			request.setRequestHeader("Accept", "application/json");
 			request.send();
 		}
 		catch (err) {
