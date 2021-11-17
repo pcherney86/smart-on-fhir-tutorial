@@ -41,7 +41,9 @@
 					var diastolicbp = getBloodPressureValue(byCodes('55284-4'), '8462-4');
 					var hdl = byCodes('2085-9');
 					var ldl = byCodes('2089-1');
-					var test = getSmartCard(12742544);
+					var test = "Failed to translate";
+					var smartCardResponse = getSmartCard(12742544);
+					//smartCardResponse.
 					var p = defaultPatient();
 					p.birthdate = patient.birthDate;
 					p.gender = gender;
@@ -84,7 +86,7 @@
 			diastolicbp: { value: '' },
 			ldl: { value: '' },
 			hdl: { value: '' },
-			test: { value: '' },
+			test: { value: '' }
 		};
 	}
 
